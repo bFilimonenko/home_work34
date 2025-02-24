@@ -4,23 +4,47 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: "Poppins Regular";
+    font-weight: 400;
+    font-style: normal;
+    src: url(/src/assets/fonts/Poppins-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Poppins Medium";
+    font-weight: 500;
+    font-style: normal;
+    src: url(/src/assets/fonts/Poppins-Medium.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Poppins Bold";
+    font-weight: 700;
+    font-style: normal;
+    src: url(/src/assets/fonts/Poppins-Bold.ttf) format("truetype");
+}
+
 body {
-    font-family: 'PT Serif', serif;
+    font-family: "Poppins Regular";
     background: linear-gradient(to right, #2b4f8d, #011034);
     min-height: 100vh;
 }
 
 h1 {
+    font-family: "Poppins Bold";
     font-size: 48px;
     margin-bottom: 80px;
     text-shadow: 0 0 10px #011034;
 }
 
 h2 {
+    font-family: "Poppins Medium";
     font-size: 18px;
     text-align: center;
     pointer-events: none;
 }
+
 main, header {
     max-width: 2000px;
     margin: 0 auto;
@@ -39,9 +63,9 @@ main, header {
 }
 
 .logo a {
+    font-family: "Poppins Medium";
     font-size: 18px;
     color: white;
-    font-weight: bold;
     text-decoration: none;
 }
 
@@ -60,6 +84,7 @@ main, header {
         box-shadow: 1px 5px 9px 1px #2b4f8d;
         transform: translateY(-2px);
     }
+
     @media (max-width: 768px) {
         font-size: 14px;
         padding: 16px;
@@ -81,7 +106,7 @@ main, header {
 
 /*///*/
 .main-content {
-    background: url("images/background-image.jpg") center bottom / cover no-repeat fixed border-box;
+    background: url("../assets/images/background-image.jpg") center bottom / cover no-repeat fixed border-box;
     display: flex;
     justify-content: center;
     padding: 32px;
@@ -225,6 +250,7 @@ main, header {
     &:hover {
         background-color: #011034;
     }
+
     @media (max-width: 768px) {
         font-size: 16px;
     }
@@ -385,6 +411,7 @@ main, header {
         background-color: white;
         box-shadow: 0 0 4px rgba(4, 156, 228, 0.3);
     }
+
     @media (max-width: 768px) {
         font-size: 14px;
     }
@@ -412,6 +439,7 @@ main, header {
         background-color: #049ce4;
         transform: translateY(-2px);
     }
+
     @media (max-width: 768px) {
         font-size: 16px;
     }
@@ -430,34 +458,6 @@ main, header {
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
     z-index: 20;
-}
-
-.notification {
-    position: fixed;
-    top: 36%;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    color: white;
-    padding: 15px 25px;
-    font-size: 24px;
-    border-radius: 4px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    z-index: 100;
-
-    @media (max-width: 768px) {
-        font-size: 18px;
-    }
-}
-
-.notification.success {
-    background: #4CAF50;
-}
-
-.notification.warning {
-    background: red;
 }
 
 .hidden {

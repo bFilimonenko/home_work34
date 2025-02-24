@@ -1,4 +1,4 @@
-const categories = [
+export const categories = [
   {
     id: "phones1111",
     name: "Телефони",
@@ -121,6 +121,5 @@ const categories = [
     ]
   }
 ];
-
 
 

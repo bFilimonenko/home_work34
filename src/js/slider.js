@@ -6,7 +6,7 @@ const defaultImages = [
   { src: "images/5.jpg", alt: "car with parrot" }
 ];
 
-function generateSliderLayout() {
+export function generateSliderLayout() {
   return `<div class="slider">
     <div class="slides"></div>
 
@@ -19,7 +19,7 @@ function generateSliderLayout() {
   </div>`;
 }
 
-function initializeSlider(imagesArray = defaultImages) {
+export function initializeSlider(imagesArray = defaultImages) {
   const INTERVAL = 3000;
   let currentSlide = 0;
   const slidesElement = document.querySelector(".slides");
@@ -158,5 +158,4 @@ function initializeSlider(imagesArray = defaultImages) {
 
     isOnPause = !isOnPause;
   });
-
 }

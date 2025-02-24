@@ -1,6 +1,10 @@
+import { categories } from "@js/data";
+import { generateSliderLayout, initializeSlider } from "@js/slider";
+import "../css/style.css";
+import Swal from "sweetalert2";
+
 let selectedProduct;
 let order = [];
-
 document.addEventListener("DOMContentLoaded", () => {
   showCategories();
 });
@@ -22,7 +26,7 @@ document.querySelector(".categories").addEventListener("click", (event) => {
 
 document.querySelector(".products").addEventListener("click", (event) => {
   if (
-    event.target.tagName === 'DIV' &&
+    event.target.tagName === "DIV" &&
     event.target.classList.contains("product")
   ) {
     const selectedCategoryId = event.target.parentNode.getAttribute("data-category-id");
@@ -196,7 +200,7 @@ function dataCollection() {
   //Saving data
   const clientData = {
     name: name,
-    phone: phone,
+    phone: phone
   };
   localStorage.setItem("clientData", JSON.stringify(clientData));
 
@@ -204,26 +208,27 @@ function dataCollection() {
 }
 
 function showWarningNotification(message) {
-  const notification = document.querySelector(".notification.warning");
-
-  notification.textContent = message;
-  notification.classList.remove("hidden");
-  setTimeout(() => {
-    notification.classList.add("hidden");
-  }, 2000);
+  Swal.fire({
+    position: "center",
+    icon: "warning",
+    title: `${message}`,
+    showConfirmButton: false,
+    timer: 2500
+  });
 }
 
 function showSuccessNotification() {
-  const notification = document.querySelector(".notification.success");
-
-  notification.textContent = "Congrats! You bought product";
-  notification.classList.remove("hidden");
+  Swal.fire({
+    position: "center",
+    icon: "success",
+    title: "Congrats! You bought product",
+    showConfirmButton: false,
+    timer: 3000
+  });
 
   setTimeout(() => {
-    notification.classList.add("hidden");
     document.querySelector(".order_form").classList.add("hidden");
     document.querySelector(".background").classList.add("hidden");
   }, 3000);
 }
-
 
