@@ -42,14 +42,14 @@ export default {
         test: /\.(png|jpe?g|svg|gif|webp)$/,
         type: "asset/resource",
         generator: {
-          filename: "images/[name][ext]" // [name].[hash][ext]
+          filename: "images/[name].[hash][ext]" // [name][ext]
         }
       },
       {
         test: /\.(woff|woff2|ttf|eot)$/,
         type: "asset/resource",
         generator: {
-          filename: "fonts/[name][ext]" // [name].[hash][ext]
+          filename: "fonts/[name].[hash][ext]" // [name][ext]
         }
       }
     ]
@@ -58,7 +58,6 @@ export default {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
-      title: "Lenovo"
     }),
     new CopyPlugin({
       patterns: [
